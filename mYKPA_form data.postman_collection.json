@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "d389ee4e-2c3d-47c9-8b75-39bb955b54d5",
+		"name": "KPA_form data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47089606",
+		"_collection_link": "https://workshrijan8756-6962938.postman.co/workspace/Shrijan's-Workspace~2627ddd3-c9a6-4f96-887b-e4bab97b9f81/collection/47089606-d389ee4e-2c3d-47c9-8b75-39bb955b54d5?action=share&source=collection_link&creator=47089606"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/form\n",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Shrijan Singh\",\r\n  \"email\": \"shrijan@example.com\",\r\n  \"phone\": \"9876543210\",\r\n  \"comments\": \"Looking forward to the event!\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/form\n",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"form\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/form",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/form",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"form"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
