@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "61869919484",
+    "project_id": "kpa-erp-system-41c3a",
+    "storage_bucket": "kpa-erp-system-41c3a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61869919484:android:21a401f13e5010be011b79",
+        "android_client_info": {
+          "package_name": "com.example.kpa_erp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDphrzvxLFT8jBHC1JxtzM-ow2W7z_qE9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
