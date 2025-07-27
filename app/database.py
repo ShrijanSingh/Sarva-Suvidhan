@@ -2,10 +2,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 
-DATABASE_URL = "sqlite:///./test.db"  # or your actual database URL
+
+# Update to use PostgreSQL
+DATABASE_URL = "postgresql://postgres:root%40123@localhost:5432/kpadb"  # Update user/password as needed
 
 engine = create_engine(
-    DATABASE_URL, connect_args={"check_same_thread": False}  # only for SQLite
+    DATABASE_URL
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

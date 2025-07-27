@@ -10,11 +10,14 @@ from app.schemas import (
 
 from fastapi import HTTPException
 from pydantic import BaseModel
+import jwt
+from datetime import datetime, timedelta
 
 router = APIRouter()
 
 
 # Accept 'phone' instead of 'username' for login
+
 class LoginRequest(BaseModel):
     phone: str
     password: str
@@ -33,12 +36,22 @@ def get_db():
         db.close()
 
 
-# Login endpoint that checks usertable
+# JWT secret and algorithm
+JWT_SECRET = "your_secret_key"  # Change this to a secure value in production
+JWT_ALGORITHM = "HS256"
+
+# Login endpoint that checks usertable and returns a real JWT
 @router.post("/users/login/", response_model=LoginResponse)
 def login(request: LoginRequest, db: Session = Depends(get_db)):
     user = db.query(UserTable).filter_by(phone_no=request.phone, password=request.password).first()
     if user:
-        return LoginResponse(access_token="dummy_token")
+        payload = {
+            "sub": str(user.id),
+            "phone": user.phone_no,
+            "exp": datetime.utcnow() + timedelta(hours=12)
+        }
+        token = jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
+        return LoginResponse(access_token=token)
     raise HTTPException(status_code=401, detail="Invalid phone or password")
 
 
@@ -54,7 +67,7 @@ def create_form(data: FormDataCreate, db: Session = Depends(get_db)):
 # WheelSpecification endpoints
 @router.post("/wheelspecification", response_model=WheelSpecificationResponse)
 def create_wheel_specification(data: WheelSpecificationCreate, db: Session = Depends(get_db)):
-    new_data = WheelSpecification(**data.dict())
+    new_data = WheelSpecification(**data.dict(by_alias=True))
     db.add(new_data)
     db.commit()
     db.refresh(new_data)
