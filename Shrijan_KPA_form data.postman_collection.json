@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "d389ee4e-2c3d-47c9-8b75-39bb955b54d5",
+		"name": "KPA_form data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47089606",
+		"_collection_link": "https://workshrijan8756-6962938.postman.co/workspace/Shrijan's-Workspace~2627ddd3-c9a6-4f96-887b-e4bab97b9f81/collection/47089606-d389ee4e-2c3d-47c9-8b75-39bb955b54d5?action=share&source=collection_link&creator=47089606"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/PostWheelData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"treadDiameterNew\": \"915 (900-1000)\",\r\n    \"lastShopIssueSize\": \"837 (800-900)\",\r\n    \"condemningDia\": \"825 (800-900)\",\r\n    \"wheelGauge\": \"1600 (+2,-1)\",\r\n    \"variationSameAxle\": \"0.5\",\r\n    \"variationSameBogie\": \"5\",\r\n    \"variationSameCoach\": \"13\",\r\n    \"wheelProfile\": \"29.4 Flange Thickness\",\r\n    \"intermediateWWP\": \"20 TO 28\",\r\n    \"bearingSeatDiameter\": \"130.043 TO 130.068\",\r\n    \"rollerBearingOuterDia\": \"280 (+0.0/-0.035)\",\r\n    \"rollerBearingBoreDia\": \"130 (+0.0/-0.025)\",\r\n    \"rollerBearingWidth\": \"93 (+0/-0.250)\",\r\n    \"axleBoxHousingBoreDia\": \"280 (+0.030/+0.052)\",\r\n    \"wheelDiscWidth\": \"127 (+4/-0)\"\r\n  }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/wheelspecification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"wheelspecification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/users/login/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicGhvbmUiOiI3NzYwODczOTc2IiwiZXhwIjoxNzUzNjg3MDEyfQ.7FezHqEymWTPFhesGjZOI-gKxkGq2NfGH0Lvc1zWsRs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/users/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/FetchWheelSpecs",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicGhvbmUiOiI3NzYwODczOTc2IiwiZXhwIjoxNzUzNjg2MDA1fQ.q6iVGwHs8pcAOR2xKJyw_yZy_mfCSwOYkKvpjCZ7lFI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/wheelspecification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"wheelspecification"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
